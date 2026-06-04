@@ -1,0 +1,4 @@
+expression RutaArchivo = "C:\\Users\\TU_USUARIO\\Real_y_pa_2026v2.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 523e6e90-0cc4-46e8-92e6-270021081397
+
+	annotation PBI_ResultType = Text

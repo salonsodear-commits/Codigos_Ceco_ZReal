@@ -1,0 +1,18 @@
+{
+  "config": "{\"version\": \"5.43\", \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true}",
+  "layoutOptimization": 0,
+  "sections": [
+    {
+      "name": "d4db03fa-84cb-4277-ac8c-bef0330f5d3b",
+      "displayName": "Resumen",
+      "filters": "[]",
+      "ordinal": 0,
+      "visualContainers": [],
+      "config": "{}",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "filters": "[]"
+}
