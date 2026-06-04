@@ -1,0 +1,24 @@
+Nombre,Condicion,Resultado,Fuente,Confianza
+R01_Letra_Sociedad,Centro de coste pos 1 IN (C E M V R),Letra de sociedad valida; mapear a Sociedad/EMPRESA del ZREAL,"V106 Tabla Inicial CECO; Base Real col Sociedad/EMPRESA",Alta (derivada del codigo)
+R02_Sociedad_real,"pos1='C' requiere confirmar Sociedad real con campo Sociedad/EMPRESA (0010/0020/0040/0050/0060/0070/0080/0090)",Sociedad real = campo Sociedad/EMPRESA, no la letra,"V106 Tabla Inicial CECO; Base Real Sociedad/EMPRESA",Media (letra C compartida)
+R03_Tipologia_Locacion,Centro de coste pos 2-3 = 'LE',Tipologia = Locacion,V106 LOCACIONES,Alta (derivada del codigo)
+R04_Tipologia_Directo,Centro de coste pos 2-3 es numerico (NN),Tipologia = Directo,V106 Direct NEGOCIOS,Alta (derivada del codigo)
+R05_Tipologia_Indirecto,Centro de coste pos 2-3 son dos letras (LL) distintas de 'LE',Tipologia = Indirecto,V106 INDIRECTOS,Alta (derivada del codigo)
+R06_Negocio_Directo,Tipologia=Directo y pos 2-3 IN catalogo NEGOCIOS,Negocio = DESCRIPCION del codigo,V106 Direct NEGOCIOS,Alta (catalogo)
+R07_Producto_Directo,Tipologia=Directo y pos 4-6 IN catalogo PRODUCTOS,Producto = DESCRIPCION del codigo,V106 Direct PRODUCTOS,Alta (catalogo)
+R08_Area_Indirecto,Tipologia=Indirecto y pos 2-3 IN catalogo AREAS (15),Area = DESCRIPCION del codigo,V106 INDIRECTOS,Alta (catalogo)
+R09_Sector_Indirecto,Tipologia=Indirecto y pos 4-6 IN catalogo SECTORES y par (Area,Sector) valido,Sector = DESCRIPCION del codigo,V106 INDIRECTOS,Alta (catalogo)
+R10_Zona,Centro de coste pos 7-10 IN catalogo ZONAS,Zona = DESCRIPCION del codigo,"V106 ZONAS + INDIRECTOS + LOCACIONES (union)",Alta (catalogo)
+R11_Zona_huerfana,pos 7-10 con patron 9NN+letra pero NO en catalogo (901C 902B 902C 915E 916E),Zona valida en forma pero ausente del diccionario -> ALTA en V106,Base Real (228 filas),PENDIENTE DE VALIDAR (DW/Control de Gestion)
+R12_Vertical,Usar campo VERTICAL del ZREAL (PETROLEO/MINERIA/OTRAS OPERACIONES DEDICADAS),Segmento Operaciones Complejas ya resuelto en origen,Base Real col VERTICAL,Alta (resuelto en origen)
+R13_OPEX_rubro_consolidado,Mapear Clase de coste -> Denominacion de la cuenta,Rubro OPEX consolidado (13+1 rubros),Base Real (1:1 verificado, 0 nulos),Alta (1:1 verificado)
+R14_RubroEBITDA_por_GrupoArea,"GRUPO AREA=OPERATIVA -> Costo Servicio; GRUPO AREA=COMERCIAL -> Gasto Comercializacion",Rubro EBITDA NO se deriva de Clase de coste sola (15 clases ambiguas),"Base Real GRUPO AREA / RUBRO EBITDA",Alta (regla por GRUPO AREA)
+R15_OPEX_es_gasto,TIPO DE CUENTA IN (GASTOS, Costo de Servicios) y RUBRO EBITDA distinto de ingreso,Marca = OPEX,Base Real TIPO DE CUENTA / RUBRO EBITDA,Alta
+R16_Excluir_no_opex,TIPO DE CUENTA = Impuestos o ¿Son otros ingresos y egresos?='SI',Excluir de OPEX,Base Real,Media (revisar Tasas y Contribuciones)
+R17_Gasto_Directo_a_UN,Tipologia=Directo,Atribuible 1:1 a Negocio+Producto+Zona+Vertical -> pase directo a la UN,V106 + Base Real,Alta
+R18_Gasto_Indirecto_prorrateo,Tipologia=Indirecto y Sector transversal (AF DH ST DG y demas soporte),No atribuible univocamente -> prorratear por driver de incidencia de venta,V106 INDIRECTOS,Media (requiere driver de venta)
+R19_Indirecto_dedicado_OC,"Tipologia=Indirecto con Sector IN (N03 Petroleo, N10 Mineria, N12 Base Cipolletti, N16 Expansion LATAM, C13 Operaciones Complejas)",Candidato a tratar como DIRECTO a la Vertical pese a CECO indirecto,V106 INDIRECTOS area NO / CM,PENDIENTE DE VALIDAR (Control de Gestion)
+R20_Driver_prorrateo_venta,"% participacion de venta de cada UN sobre total del segmento, periodo de referencia a confirmar",Reparto del gasto indirecto entre UN; Suma porciones = 100%,FUENTE DE VENTA NO DISPONIBLE en los archivos,PENDIENTE DE VALIDAR (Comercial/DW)
+R21_Borde_sin_venta,Gasto indirecto en periodo sin venta de la UN,Aplicar fallback (acumulado / mes anterior / ultima venta) a definir,Modelo de prorrateo,PENDIENTE DE VALIDAR
+R22_Borde_UN_nueva,UN sin historico de venta,Driver alternativo (presupuesto/headcount) a definir,Modelo de prorrateo,PENDIENTE DE VALIDAR
+R23_Consistencia_origen,"pos 2-3=CODIGO NEGOCIO/AREA, pos 4-6=CODIGO PRODUCTO/SECTOR, pos 7-10=ZONA",Validacion de que la descomposicion reproduce el origen (0 divergencias),Base Real,Alta (verificado: 0 divergencias)
