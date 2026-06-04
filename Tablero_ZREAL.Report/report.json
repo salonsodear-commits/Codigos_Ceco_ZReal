@@ -20,11 +20,84 @@
   ],
   "sections": [
     {
-      "name": "ReportSection2943f94c410a43ccbde49d0b4f2cd7f3",
-      "displayName": "Resumen",
+      "name": "ReportSection48cfa1c25df940acaaa573ed016b5151",
+      "displayName": "Resumen OPEX",
       "filters": "[]",
       "ordinal": 0,
-      "visualContainers": [],
+      "visualContainers": [
+        {
+          "x": 16.0,
+          "y": 16.0,
+          "z": 0.0,
+          "width": 260.0,
+          "height": 110.0,
+          "config": "{\"name\": \"9975bd96e6c345a19ba7f1097458754f\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 16, \"z\": 0, \"width\": 260, \"height\": 110, \"tabOrder\": 0}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 292.0,
+          "y": 16.0,
+          "z": 1.0,
+          "width": 200.0,
+          "height": 110.0,
+          "config": "{\"name\": \"5a3b9eb80b8e45998cd1a9bb696b895d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 292, \"y\": 16, \"z\": 1, \"width\": 200, \"height\": 110, \"tabOrder\": 1}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.% Directo\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Directo\"}, \"Name\": \"Base Real.% Directo\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 508.0,
+          "y": 16.0,
+          "z": 2.0,
+          "width": 200.0,
+          "height": 110.0,
+          "config": "{\"name\": \"330eaa0e60654c4fb89c21da4a3ecff4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 508, \"y\": 16, \"z\": 2, \"width\": 200, \"height\": 110, \"tabOrder\": 2}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.% Indirecto\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Indirecto\"}, \"Name\": \"Base Real.% Indirecto\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 724.0,
+          "y": 16.0,
+          "z": 3.0,
+          "width": 200.0,
+          "height": 200.0,
+          "config": "{\"name\": \"6a4bf8a2dbc7487a8176788ec14933fd\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 724, \"y\": 16, \"z\": 3, \"width\": 200, \"height\": 200, \"tabOrder\": 3}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.VERTICAL\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"VERTICAL\"}, \"Name\": \"Base Real.VERTICAL\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 16.0,
+          "y": 140.0,
+          "z": 4.0,
+          "width": 340.0,
+          "height": 260.0,
+          "config": "{\"name\": \"037ba9086cdb485791a1128713abc55e\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 140, \"z\": 4, \"width\": 340, \"height\": 260, \"tabOrder\": 4}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Base Real.VERTICAL\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"VERTICAL\"}, \"Name\": \"Base Real.VERTICAL\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 372.0,
+          "y": 140.0,
+          "z": 5.0,
+          "width": 420.0,
+          "height": 400.0,
+          "config": "{\"name\": \"80998bed1a5e44f880548eef65c760e8\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 372, \"y\": 140, \"z\": 5, \"width\": 420, \"height\": 400, \"tabOrder\": 5}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Base Real.Denominación de la cuenta\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Denominación de la cuenta\"}, \"Name\": \"Base Real.Denominación de la cuenta\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 16.0,
+          "y": 412.0,
+          "z": 6.0,
+          "width": 340.0,
+          "height": 128.0,
+          "config": "{\"name\": \"34b512440d614ad08884d7a917232640\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 412, \"z\": 6, \"width\": 340, \"height\": 128, \"tabOrder\": 6}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Base Real.mes año\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"mes año\"}, \"Name\": \"Base Real.mes año\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 808.0,
+          "y": 140.0,
+          "z": 7.0,
+          "width": 456.0,
+          "height": 400.0,
+          "config": "{\"name\": \"a4e7fc1719454c78924246a16ff5dd73\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 808, \"y\": 140, \"z\": 7, \"width\": 456, \"height\": 400, \"tabOrder\": 7}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.ZonaCECO\"}, {\"queryRef\": \"Base Real.ZonaHuerfana\"}, {\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"ZonaCECO\"}, \"Name\": \"Base Real.ZonaCECO\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"ZonaHuerfana\"}, \"Name\": \"Base Real.ZonaHuerfana\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        }
+      ],
       "config": "{}",
       "displayOption": 1,
       "height": 720.0,
