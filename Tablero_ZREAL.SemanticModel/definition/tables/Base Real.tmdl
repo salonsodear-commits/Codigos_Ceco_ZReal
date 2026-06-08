@@ -60,6 +60,22 @@ table 'Base Real'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Cta.contrapartida'
+		dataType: string
+		lineageTag: 82d63345-e7e1-43cf-b36a-f7952162be42
+		summarizeBy: none
+		sourceColumn: Cta.contrapartida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominacion cuenta contrapartida'
+		dataType: string
+		lineageTag: 9e81004f-5d37-42ed-b8b8-f808165d6fdd
+		summarizeBy: none
+		sourceColumn: Denominacion cuenta contrapartida
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'TIPO CECO'
 		dataType: string
 		lineageTag: 10fa6b51-3e38-4d96-b613-aefae046e74d
@@ -224,6 +240,14 @@ table 'Base Real'
 		formatString: #,0
 		lineageTag: 2b36573f-01e2-41bf-90a4-cda32519ad76
 
+	measure 'Desvío OPEX vs PA' = [OPEX Total] - [Presupuesto Total]
+		formatString: #,0
+		lineageTag: 5f9dd6fb-9a70-4dbd-aca6-a5b1a5f397f5
+
+	measure '% Ejecución Ppto' = DIVIDE ( [OPEX Total], [Presupuesto Total] )
+		formatString: 0.0%
+		lineageTag: 6ce45bb0-e4b2-45dc-993f-44d5f5fab0e4
+
 	partition 'Base Real' = m
 		mode: import
 		source =
@@ -233,6 +257,7 @@ table 'Base Real'
 				    Encabezados = Table.PromoteHeaders(BaseReal, [PromoteAllScalars=true]),
 				    Sel = Table.SelectColumns(Encabezados, {
 				        "Sociedad","EMPRESA","Centro de coste","Clase de coste","Denom.clase de coste",
+				        "Cta.contrapartida","Denominacion cuenta contrapartida",
 				        "Valor/mon.inf.","TIPO CECO","CODIGO NEGOCIO/AREA","CODIGO PRODUCTO/SECTOR",
 				        "NEGOCIO/AREA","PRODUCTO/SECTOR","GRUPO AREA","Denominación de la cuenta",
 				        "RUBRO EBITDA","VERTICAL","ZONA","mes año"
@@ -252,6 +277,7 @@ table 'Base Real'
 				    Tipado = Table.TransformColumnTypes(ZonaHuerfana, {
 				        {"Sociedad", type text},{"EMPRESA", type text},{"Centro de coste", type text},
 				        {"Clase de coste", type text},{"Denom.clase de coste", type text},
+				        {"Cta.contrapartida", type text},{"Denominacion cuenta contrapartida", type text},
 				        {"Valor/mon.inf.", type number},{"TIPO CECO", type text},
 				        {"CODIGO NEGOCIO/AREA", type text},{"CODIGO PRODUCTO/SECTOR", type text},
 				        {"NEGOCIO/AREA", type text},{"PRODUCTO/SECTOR", type text},{"GRUPO AREA", type text},

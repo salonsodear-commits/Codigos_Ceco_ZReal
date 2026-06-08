@@ -1,0 +1,25 @@
+table Vertical
+	lineageTag: 9e81004f-0002-42ed-b8b8-f808165d0002
+
+	column Vertical
+		dataType: string
+		lineageTag: 5f9dd6fb-0003-4dbd-aca6-a5b1a5f30003
+		summarizeBy: none
+		sourceColumn: Vertical
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vertical = calculated
+		mode: import
+		source =
+				FILTER (
+				    DISTINCT (
+				        UNION (
+				            SELECTCOLUMNS ( 'Base Real', "Vertical", 'Base Real'[VERTICAL] ),
+				            SELECTCOLUMNS ( PA, "Vertical", PA[VERTICAL] )
+				        )
+				    ),
+				    NOT ISBLANK ( [Vertical] )
+				)
+
+	annotation PBI_ResultType = Table

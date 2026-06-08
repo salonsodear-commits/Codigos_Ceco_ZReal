@@ -1,0 +1,238 @@
+table PA
+	lineageTag: 5c3ea8cf-c132-4758-8405-76eaca975836
+
+	column 'Centro de coste'
+		dataType: string
+		lineageTag: af5f0dfd-9d1d-4df0-bcc1-62386ee9dd4d
+		summarizeBy: none
+		sourceColumn: Centro de coste
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NEGOCIO/AREA'
+		dataType: string
+		lineageTag: 36fd48e5-362d-4bc9-a390-984d00923687
+		summarizeBy: none
+		sourceColumn: NEGOCIO/AREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PRODUCTO/SECTOR'
+		dataType: string
+		lineageTag: 4213ce9c-8902-47c7-918c-4294240e6205
+		summarizeBy: none
+		sourceColumn: PRODUCTO/SECTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RUBRO EBITDA'
+		dataType: string
+		lineageTag: e1883d0e-fa94-40e8-bf03-4f586b5ca985
+		summarizeBy: none
+		sourceColumn: RUBRO EBITDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SUBRUBRO EBITDA'
+		dataType: string
+		lineageTag: 8c533927-23d9-455a-bc06-b94dd784cac0
+		summarizeBy: none
+		sourceColumn: SUBRUBRO EBITDA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominación de la cuenta'
+		dataType: string
+		lineageTag: 05b93852-4cc9-4d1a-8b0d-32722cb774cd
+		summarizeBy: none
+		sourceColumn: Denominación de la cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clase de coste'
+		dataType: string
+		lineageTag: 8d29451a-c098-4cf1-9857-068cd5bb8fe1
+		summarizeBy: none
+		sourceColumn: Clase de coste
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denom.clase de coste'
+		dataType: string
+		lineageTag: 61b848ca-5d21-4d84-9710-063bfdc94dcf
+		summarizeBy: none
+		sourceColumn: Denom.clase de coste
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denominacion cuenta contrapartida'
+		dataType: string
+		lineageTag: 401c74d5-8597-45de-9ed2-6826baaf36a4
+		summarizeBy: none
+		sourceColumn: Denominacion cuenta contrapartida
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VERTICAL'
+		dataType: string
+		lineageTag: d9c99646-8d89-40da-9152-a3d78f79db38
+		summarizeBy: none
+		sourceColumn: VERTICAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsable de Gestión 2'
+		dataType: string
+		lineageTag: cc84f20b-516b-420a-a920-7f1941da88f8
+		summarizeBy: none
+		sourceColumn: Responsable de Gestión 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Responsable de Gestión 3'
+		dataType: string
+		lineageTag: 4881781e-9d40-4959-8c0d-65f910409045
+		summarizeBy: none
+		sourceColumn: Responsable de Gestión 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'mes año'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: df419eb8-a9ee-42d7-8dad-d6ca1b8191cc
+		summarizeBy: none
+		sourceColumn: mes año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Presupuesto
+		dataType: double
+		lineageTag: b42cb506-498c-43ee-aaaf-4f902cab1942
+		summarizeBy: sum
+		sourceColumn: Presupuesto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CECO
+		dataType: string
+		lineageTag: 6b952221-dae8-475b-b3b6-e36d989dd749
+		summarizeBy: none
+		sourceColumn: CECO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Letra
+		dataType: string
+		lineageTag: a3118aa6-3ec0-4a51-bd55-99e0e2da184f
+		summarizeBy: none
+		sourceColumn: Letra
+
+		annotation SummarizationSetBy = Automatic
+
+	column NegArea
+		dataType: string
+		lineageTag: 08daf814-2bf2-4eb8-ae24-e1b54fbd381e
+		summarizeBy: none
+		sourceColumn: NegArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdSector
+		dataType: string
+		lineageTag: 7edd25a9-ff64-4676-b24a-cc8c847c2b44
+		summarizeBy: none
+		sourceColumn: ProdSector
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZonaCECO
+		dataType: string
+		lineageTag: 8d46200d-e940-4bdd-b3ec-9306a202204b
+		summarizeBy: none
+		sourceColumn: ZonaCECO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipologia
+		dataType: string
+		lineageTag: 77d7149a-ad10-487d-b6ab-1ce2441de4cc
+		summarizeBy: none
+		sourceColumn: Tipologia
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Presupuesto Total' = SUM ( PA[Presupuesto] )
+		formatString: #,0
+		lineageTag: 1458706d-0058-4219-8112-92f7edd7482b
+
+	partition PA = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents(RutaArchivo), null, true),
+				    PA0 = Origen{[Item="PA",Kind="Sheet"]}[Data],
+				    Cols = Table.ColumnNames(PA0),
+				    Hdr = PA0{0},
+				    // Columnas de meses: el encabezado (fila 0) es una fecha
+				    ColsMes = List.Select(Cols, each
+				        let v = Record.Field(Hdr, _) in v <> null and (v is datetime or v is date or v is datetimezone)),
+				    // Busca la columna genérica cuyo encabezado coincide con el nombre deseado
+				    BuscarCol = (nombre) =>
+				        let hit = List.Select(Cols, each Record.Field(Hdr, _) = nombre) in
+				        if List.Count(hit) > 0 then hit{0} else null,
+				    // {nombre final, nombre encabezado en la hoja}
+				    DimDeseadas = {
+				        {"Centro de coste","Centro de coste"},
+				        {"NEGOCIO/AREA","NEGOCIO/AREA"},
+				        {"PRODUCTO/SECTOR","PRODUCTO/SECTOR"},
+				        {"RUBRO EBITDA","RUBRO EBITDA"},
+				        {"SUBRUBRO EBITDA","SUBRUBRO EBITDA"},
+				        {"Denominación de la cuenta","Denominación de la cuenta"},
+				        {"Clase de coste","Clase de coste"},
+				        {"Denom.clase de coste","Denom.clase de coste"},
+				        {"Denominacion cuenta contrapartida","Denominacion cuenta contrapartida"},
+				        {"VERTICAL","AUX VERTICAL"},
+				        {"Responsable de Gestión 2","Responsable de Gestión 2"},
+				        {"Responsable de Gestión 3","Responsable de Gestión 3"}
+				    },
+				    DimPares = List.Select(List.Transform(DimDeseadas, each {_{0}, BuscarCol(_{1})}), each _{1} <> null),
+				    GenericasDim = List.Transform(DimPares, each _{1}),
+				    NombresDimFinal = List.Transform(DimPares, each _{0}),
+				    // Cuerpo sin la fila de encabezados
+				    Cuerpo = Table.Skip(PA0, 1),
+				    Sel = Table.SelectColumns(Cuerpo, List.Combine({GenericasDim, ColsMes})),
+				    Renom = Table.RenameColumns(Sel, List.Transform(DimPares, each {_{1}, _{0}})),
+				    // Despivota los meses (siguen con nombre genérico ColumnN)
+				    Unpiv = Table.UnpivotOtherColumns(Renom, NombresDimFinal, "MesGen", "Presupuesto"),
+				    // Mapa columna genérica de mes -> fecha real (desde el encabezado)
+				    MapaMes = Table.FromRows(List.Transform(ColsMes, each {_, Record.Field(Hdr, _)}), {"MesGen","mes año"}),
+				    Unido = Table.NestedJoin(Unpiv, {"MesGen"}, MapaMes, {"MesGen"}, "m", JoinKind.LeftOuter),
+				    ExpandFecha = Table.ExpandTableColumn(Unido, "m", {"mes año"}, {"mes año"}),
+				    SinMesGen = Table.RemoveColumns(ExpandFecha, {"MesGen"}),
+				    // Quita filas sin presupuesto (nulo o cero)
+				    SinNulos = Table.SelectRows(SinMesGen, each [Presupuesto] <> null and [Presupuesto] <> 0),
+				    // Descomposición del CECO (igual criterio que Base Real)
+				    CECO = Table.AddColumn(SinNulos, "CECO", each Text.Trim(Text.From([#"Centro de coste"])), type text),
+				    Letra = Table.AddColumn(CECO, "Letra", each Text.Start([CECO],1), type text),
+				    NegArea = Table.AddColumn(Letra, "NegArea", each Text.Middle([CECO],1,2), type text),
+				    ProdSector = Table.AddColumn(NegArea, "ProdSector", each Text.Middle([CECO],3,3), type text),
+				    ZonaCECO = Table.AddColumn(ProdSector, "ZonaCECO", each Text.Middle([CECO],6,4), type text),
+				    Tipologia = Table.AddColumn(ZonaCECO, "Tipologia", each
+				        if [NegArea]="LE" then "Locación"
+				        else if Text.Select([NegArea],{"0".."9"})=[NegArea] then "Directo"
+				        else "Indirecto", type text),
+				    Tipado = Table.TransformColumnTypes(Tipologia, {
+				        {"Centro de coste", type text},{"NEGOCIO/AREA", type text},{"PRODUCTO/SECTOR", type text},
+				        {"RUBRO EBITDA", type text},{"SUBRUBRO EBITDA", type text},
+				        {"Denominación de la cuenta", type text},{"Clase de coste", type text},
+				        {"Denom.clase de coste", type text},{"Denominacion cuenta contrapartida", type text},
+				        {"VERTICAL", type text},{"Responsable de Gestión 2", type text},
+				        {"Responsable de Gestión 3", type text},{"Presupuesto", type number},{"mes año", type datetime}
+				    })
+				in
+				    Tipado
+
+	annotation PBI_ResultType = Table

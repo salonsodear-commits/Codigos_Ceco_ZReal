@@ -104,10 +104,10 @@ E += [Paragraph("Cómo funciona, de dónde toma los datos, cómo se actualiza y 
 E += [Spacer(1,1.2*cm)]
 meta = Table([
     ["Herramienta", "Power BI Desktop (proyecto .pbip / archivo .pbix)"],
-    ["Fuente de datos", "Real_y_pa_2026v2.xlsx — hoja «Base Real» (el ZREAL)"],
+    ["Fuentes de datos", "Real_y_pa_2026v2.xlsx — hojas «Base Real» (ZREAL) y «PA» (presupuesto)"],
     ["Diccionario maestro", "CECOS_-_Resumen_y_explicacion_V106.xlsx"],
-    ["Cobertura", "ene-2023 a abr-2026 · 65.818 registros"],
-    ["Versión del manual", "1.0 — junio 2026"],
+    ["Cobertura", "Real: ene-2023 a abr-2026 · Presupuesto (PA): 2025 a 2029"],
+    ["Versión del manual", "2.0 — junio 2026"],
 ], colWidths=[4.2*cm, 11.8*cm])
 meta.setStyle(TableStyle([
     ("FONTNAME",(0,0),(0,-1),"Helvetica-Bold"),("FONTSIZE",(0,0),(-1,-1),10),
@@ -140,12 +140,25 @@ E += [callout("En una frase",
 # ====================== 2. DE DÓNDE SALEN LOS DATOS ======================
 E += [H1("2. ¿De dónde salen los datos?")]
 E += [P("Toda la información proviene de <b>un único archivo de Excel</b>: "
-        "<b>Real_y_pa_2026v2.xlsx</b>, específicamente de la hoja llamada <b>«Base Real»</b>. "
-        "Esa hoja es el <b>ZREAL</b>: la descarga de gastos reales del sistema SAP, con un registro por "
-        "cada movimiento contable (unos 65.818 en total, de enero 2023 a abril 2026).")]
-E += [P("El tablero <b>no modifica</b> ese archivo: solo lo lee. Cada vez que se actualiza, vuelve a leer "
-        "la hoja «Base Real» y recalcula todos los gráficos.")]
-E += [H2("¿Qué columnas usa de esa hoja?")]
+        "<b>Real_y_pa_2026v2.xlsx</b>. El tablero tiene <b>dos entradas (inputs)</b>, que son dos hojas "
+        "de ese mismo archivo:")]
+E += [bullets([
+    "<b>Hoja «Base Real» (el ZREAL):</b> la descarga de gastos <b>reales</b> de SAP, un registro por cada "
+    "movimiento contable (unos 65.818, de enero 2023 a abril 2026). Es el «qué pasó realmente».",
+    "<b>Hoja «PA» (el presupuesto):</b> el <b>plan / forecast</b> de gastos por mes (años 2025 a 2029). "
+    "Es el «qué teníamos previsto gastar».",
+])]
+E += [P("Tener las dos entradas permite comparar <b>Real vs. Presupuesto</b>: cuánto se gastó frente a "
+        "cuánto estaba planificado, y el <b>desvío</b> entre ambos.")]
+E += [P("El tablero <b>no modifica</b> el archivo: solo lo lee. Cada vez que se actualiza, vuelve a leer "
+        "las dos hojas y recalcula todos los gráficos.")]
+E += [callout("Las dos hojas tienen formatos distintos (y el tablero lo resuelve solo)",
+    "La «Base Real» ya viene <b>«larga»</b>: una fila por gasto, con su mes en la columna «mes año». "
+    "La hoja «PA» viene <b>«ancha»</b>: una fila por concepto y <b>una columna por mes</b> (ene-2025 a "
+    "dic-2029). Al cargarla, el tablero la <b>«despivota»</b> automáticamente para dejarla también larga "
+    "(una fila por concepto y por mes, con el monto en la columna «Presupuesto»). Así ambas hojas quedan "
+    "comparables sin tener que tocar el Excel.")]
+E += [H2("¿Qué columnas usa de la «Base Real»?")]
 E += [P("La hoja original tiene 57 columnas. El tablero toma las que necesita y, además, "
         "<b>descompone el código de centro de costo (CECO)</b> para entender cada gasto. Las principales:")]
 E += [tabla([
@@ -156,9 +169,20 @@ E += [tabla([
     ["VERTICAL", "Petróleo / Minería / Otras operaciones dedicadas."],
     ["Denominación de la cuenta", "El rubro de OPEX (Alquileres, Honorarios, Movilidad, etc.)."],
     ["RUBRO EBITDA", "Costo de Servicio / Gasto de Comercialización / Estructura."],
+    ["Denominacion cuenta contrapartida", "El concepto o el tercero del otro lado del asiento (p. ej. el proveedor)."],
     ["mes año", "La fecha, para ver la evolución temporal."],
     ["ZONA", "La provincia / región del gasto."],
 ], [5.2*cm, 10.8*cm])]
+E += [callout("Novedad de esta versión: la «cuenta contrapartida»",
+    "Ahora la «Base Real» incluye las columnas <b>«Cta.contrapartida»</b> y <b>«Denominacion cuenta "
+    "contrapartida»</b>. En un asiento contable, la contrapartida es <b>el otro lado del movimiento</b>: "
+    "típicamente indica <b>a quién o a qué concepto</b> se le imputó el gasto (por ejemplo, el nombre del "
+    "proveedor). Sirve para abrir el detalle y entender el porqué de cada importe.", color=VERDE)]
+E += [H2("¿Qué columnas usa de la «PA» (presupuesto)?")]
+E += [P("De la hoja PA se toman las dimensiones que permiten comparar contra el real (centro de costo, "
+        "negocio/área, producto/sector, rubro, cuenta, vertical y contrapartida), más el <b>monto "
+        "presupuestado de cada mes</b>. La columna <b>«AUX VERTICAL»</b> de PA se usa como Vertical "
+        "(Petróleo/Minería/Otras) y el resultado del despivote se guarda en la columna <b>«Presupuesto»</b>.")]
 E += [callout("Dato importante sobre la ruta del archivo",
     "El tablero busca el Excel en una <b>ruta de tu computadora o de la red</b>. Si el archivo se mueve "
     "de carpeta, hay que avisarle la nueva ruta (se explica en el punto 4). Hoy está apuntando a: "
@@ -270,11 +294,26 @@ E += [tabla([
 ], [3.0*cm, 2.4*cm, 3.4*cm, 7.2*cm])]
 E += [Paragraph("«Probable» es una interpretación por el prefijo numérico; debe confirmarlo el dueño del dato.", st_small)]
 
+E += [H2("5.6 Presupuesto (PA), Desvío y % de Ejecución")]
+E += [P("Con la hoja PA cargada, el tablero puede comparar lo real contra el plan. Los conceptos:")]
+E += [bullets([
+    "<b>Presupuesto Total:</b> la suma de lo planificado (hoja PA) para el filtro elegido.",
+    "<b>Desvío OPEX vs PA:</b> Real − Presupuesto. Si es <b>positivo</b>, se gastó <b>más</b> de lo "
+    "previsto; si es <b>negativo</b>, se gastó <b>menos</b>.",
+    "<b>% Ejecución Ppto:</b> Real ÷ Presupuesto. 100% = se gastó exactamente lo planificado; "
+    ">100% = sobreejecución; &lt;100% = subejecución.",
+])]
+E += [callout("¿Cómo se conectan las dos entradas?",
+    "Para que un mismo filtro afecte a la vez al Real y al Presupuesto, el modelo usa dos <b>tablas "
+    "compartidas</b>: <b>Calendario</b> (los meses) y <b>Vertical</b> (Petróleo/Minería/Otras). "
+    "Ambas entradas se «cuelgan» de esas tablas, así al elegir un mes o un vertical se filtran las dos "
+    "al mismo tiempo y la comparación es válida.")]
+
 E += [PageBreak()]
 
 # ====================== 6. CÓMO LEER CADA PÁGINA ======================
 E += [H1("6. Cómo leer el tablero, página por página")]
-E += [P("El tablero tiene <b>dos páginas</b> (pestañas abajo a la izquierda). En todas, al hacer clic "
+E += [P("El tablero tiene <b>tres páginas</b> (pestañas abajo a la izquierda). En todas, al hacer clic "
         "en un elemento de un gráfico, el resto se <b>resalta/filtra</b> automáticamente.")]
 
 E += [H2("Página 1 — «Resumen OPEX»")]
@@ -298,6 +337,18 @@ E += [tabla([
     ["Matriz «Rubro x Vertical»", "Cruce: cuánto gasta cada Vertical en cada rubro. La vista más analítica."],
     ["Columnas Directo/Indirecto por Vertical", "Dentro de cada Vertical, qué parte es directa y qué parte indirecta."],
     ["Tabla «Negocio/Área»", "Detalle del gasto por negocio o área."],
+], [4.8*cm, 11.2*cm])]
+
+E += [H2("Página 3 — «Real vs PA» (nueva)")]
+E += [P("Compara lo gastado (Real) contra lo presupuestado (PA). Los filtros de esta página usan las "
+        "tablas compartidas, así que afectan a las dos entradas a la vez.")]
+E += [tabla([
+    ["Visual", "Qué muestra / cómo leerlo"],
+    ["Filtros «Vertical» y «Año»", "Enfocan toda la página en un segmento y/o un año (afectan Real y PA)."],
+    ["Tarjetas KPI", "OPEX Total (real), Presupuesto Total, Desvío y % Ejecución, de un vistazo."],
+    ["Columnas Real vs PA por Vertical", "Dos barras por vertical: una el real, otra el presupuesto."],
+    ["Línea Real vs PA en el tiempo", "Dos líneas mes a mes: real vs. plan; se ve dónde se despega."],
+    ["Matriz por Vertical", "Tabla con OPEX, Presupuesto, Desvío y % Ejecución por cada vertical."],
 ], [4.8*cm, 11.2*cm])]
 
 E += [callout("Cómo interactuar (vale para todo el tablero)",
@@ -337,6 +388,12 @@ E += [tabla([
     ["Rubro", "Tipo de gasto (Alquileres, Honorarios, Movilidad, etc.)."],
     ["Zona", "Provincia/región (posiciones 7-10 del CECO)."],
     ["Zona huérfana", "Zona que está en los datos pero no en el catálogo oficial V106."],
+    ["PA", "Hoja de presupuesto (plan/forecast) del archivo; la segunda entrada del tablero."],
+    ["Presupuesto", "Monto planificado para un concepto y mes (columna «Presupuesto»)."],
+    ["Despivotar", "Pasar una tabla de formato ancho (un mes por columna) a largo (un mes por fila)."],
+    ["Contrapartida", "El otro lado del asiento contable (suele ser el proveedor/concepto)."],
+    ["Desvío", "Diferencia Real − Presupuesto."],
+    ["% Ejecución", "Real ÷ Presupuesto."],
     ["Prorrateo", "Repartir el gasto indirecto entre los negocios con un criterio."],
     ["V106", "El diccionario maestro de códigos (CECOS_-_Resumen_y_explicacion_V106)."],
     ["Parámetro RutaArchivo", "La configuración que le dice al tablero dónde está el Excel."],

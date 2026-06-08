@@ -3,8 +3,30 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: es-AR
 
-	annotation PBI_QueryOrder = ["RutaArchivo","Base Real"]
+	annotation PBI_QueryOrder = ["RutaArchivo","Base Real","PA"]
 
 	annotation PBI_ProTooling = ["DevMode"]
 
 ref table 'Base Real'
+
+ref table PA
+
+ref table Calendario
+
+ref table Vertical
+
+relationship cc84f20b-0010-420a-a920-7f1941da0010
+	fromColumn: 'Base Real'.'mes año'
+	toColumn: Calendario.Mes
+
+relationship 4881781e-0011-4959-8c0d-65f910400011
+	fromColumn: PA.'mes año'
+	toColumn: Calendario.Mes
+
+relationship df419eb8-0012-42d7-8dad-d6ca1b810012
+	fromColumn: 'Base Real'.VERTICAL
+	toColumn: Vertical.Vertical
+
+relationship b42cb506-0013-43ee-aaaf-4f902cab0013
+	fromColumn: PA.VERTICAL
+	toColumn: Vertical.Vertical

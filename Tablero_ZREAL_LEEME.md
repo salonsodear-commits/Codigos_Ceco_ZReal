@@ -17,9 +17,19 @@ un `.pbix` sólo puede escribirlo Power BI Desktop; este formato lo abrís y lo 
 
 ## Qué ya viene armado (modelo)
 
-**Tabla `Base Real`** con columnas decodificadas en Power Query:
+El modelo tiene **dos entradas (inputs)** del mismo Excel y **dos dimensiones compartidas**:
+
+**Tabla `Base Real`** (hoja «Base Real», el ZREAL) con columnas decodificadas en Power Query:
 `CECO`, `Letra`, `NegArea`, `ProdSector`, `ZonaCECO`, `Tipologia` (Directo/Indirecto/Locación
 inferida del código) y `ZonaHuerfana` (marca las 228 filas de zonas fuera del V106: 901C/902B/902C/915E/916E).
+Ahora incluye también `Cta.contrapartida` y `Denominacion cuenta contrapartida`.
+
+**Tabla `PA`** (hoja «PA», presupuesto): se carga y se **despivota** (de un mes por columna a un mes
+por fila) dejando `mes año` + `Presupuesto`, con la misma descomposición de CECO. `AUX VERTICAL`
+se usa como `VERTICAL`.
+
+**Dimensiones compartidas** `Calendario` (meses) y `Vertical`, relacionadas con las dos tablas para
+que un mismo filtro cruce Real y Presupuesto.
 
 **Medidas DAX listas:**
 - `OPEX Total`
@@ -27,6 +37,8 @@ inferida del código) y `ZonaHuerfana` (marca las 228 filas de zonas fuera del V
 - `% Directo` · `% Indirecto`
 - `OPEX Indirecto Transversal` (excluye sectores dedicados a OC)
 - `OPEX Indirecto Dedicado OC` (N03/N10/N12/N16/C13)
+- `Presupuesto Total` (hoja PA)
+- `Desvío OPEX vs PA` (Real − Presupuesto) · `% Ejecución Ppto` (Real ÷ Presupuesto)
 
 ## Medidas de prorrateo — agregar cuando exista la tabla de ventas
 
@@ -48,7 +60,7 @@ SUMX ( VALUES ( Ventas[UN] ), [Gasto Indirecto Asignado] )   // debe = OPEX Indi
 ```
 
 ## Visualizaciones incluidas
-El reporte ya trae **2 páginas** con visuales ligados al modelo:
+El reporte ya trae **3 páginas** con visuales ligados al modelo:
 
 **Página 1 — `Resumen OPEX`**
 - Tarjetas: `OPEX Total`, `% Directo`, `% Indirecto`
@@ -62,6 +74,12 @@ El reporte ya trae **2 páginas** con visuales ligados al modelo:
 - Matriz: Rubro (`Denominación de la cuenta`) × `VERTICAL`
 - Columnas: Directo/Indirecto por Vertical (serie `TIPO CECO`)
 - Tabla: `NEGOCIO/AREA` + OPEX
+
+**Página 3 — `Real vs PA`** (nueva)
+- Slicers `Vertical` y `Año` (tablas compartidas: filtran Real y PA a la vez)
+- Tarjetas: `OPEX Total`, `Presupuesto Total`, `Desvío OPEX vs PA`, `% Ejecución Ppto`
+- Columnas: Real vs PA por Vertical · Línea: Real vs PA por mes
+- Matriz: Vertical × (OPEX, Presupuesto, Desvío, % Ejecución)
 
 > Si algún visual no renderizara, el modelo está intacto: borralo y rearmalo arrastrando el
 > campo, o seguí `guia_powerbi_excel.md`.
