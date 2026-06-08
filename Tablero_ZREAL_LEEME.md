@@ -47,10 +47,24 @@ Chequeo Cuadre Prorrateo =
 SUMX ( VALUES ( Ventas[UN] ), [Gasto Indirecto Asignado] )   // debe = OPEX Indirecto Transversal
 ```
 
-## Armar las visualizaciones
-La página `Resumen` viene en blanco a propósito. Arrastrá los visuales según
-`guia_powerbi_excel.md` (KPIs, OPEX por Vertical, por rubro, evolución por mes, matriz
-Vertical×Rubro, tabla de zonas huérfanas).
+## Visualizaciones incluidas
+El reporte ya trae **2 páginas** con visuales ligados al modelo:
+
+**Página 1 — `Resumen OPEX`**
+- Tarjetas: `OPEX Total`, `% Directo`, `% Indirecto`
+- Slicer `VERTICAL`
+- Columnas: OPEX por Vertical · Barras: OPEX por rubro (`Denominación de la cuenta`)
+- Línea: OPEX por `mes año` · Tabla de zonas con marca `ZonaHuerfana`
+
+**Página 2 — `Directo / Indirecto`**
+- Tarjetas: `OPEX Indirecto Transversal`, `OPEX Indirecto Dedicado OC`
+- Slicer `TIPO CECO`
+- Matriz: Rubro (`Denominación de la cuenta`) × `VERTICAL`
+- Columnas: Directo/Indirecto por Vertical (serie `TIPO CECO`)
+- Tabla: `NEGOCIO/AREA` + OPEX
+
+> Si algún visual no renderizara, el modelo está intacto: borralo y rearmalo arrastrando el
+> campo, o seguí `guia_powerbi_excel.md`.
 
 ## Estructura de archivos
 ```
