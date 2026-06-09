@@ -15,6 +15,8 @@ ref table Calendario
 
 ref table Vertical
 
+ref table Rubro
+
 relationship cc84f20b-0010-420a-a920-7f1941da0010
 	fromColumn: 'Base Real'.'mes año'
 	toColumn: Calendario.Mes
@@ -30,3 +32,11 @@ relationship df419eb8-0012-42d7-8dad-d6ca1b810012
 relationship b42cb506-0013-43ee-aaaf-4f902cab0013
 	fromColumn: PA.VERTICAL
 	toColumn: Vertical.Vertical
+
+relationship 287f95fc-0014-45c3-b0b9-716a47a50014
+	fromColumn: 'Base Real'.'Denominación de la cuenta'
+	toColumn: Rubro.Rubro
+
+relationship 1c540735-0015-4b67-b9da-eb3883630015
+	fromColumn: PA.'Denominación de la cuenta'
+	toColumn: Rubro.Rubro

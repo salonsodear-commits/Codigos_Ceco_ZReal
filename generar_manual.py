@@ -304,10 +304,10 @@ E += [bullets([
     ">100% = sobreejecución; &lt;100% = subejecución.",
 ])]
 E += [callout("¿Cómo se conectan las dos entradas?",
-    "Para que un mismo filtro afecte a la vez al Real y al Presupuesto, el modelo usa dos <b>tablas "
-    "compartidas</b>: <b>Calendario</b> (los meses) y <b>Vertical</b> (Petróleo/Minería/Otras). "
-    "Ambas entradas se «cuelgan» de esas tablas, así al elegir un mes o un vertical se filtran las dos "
-    "al mismo tiempo y la comparación es válida.")]
+    "Para que un mismo filtro afecte a la vez al Real y al Presupuesto, el modelo usa tres <b>tablas "
+    "compartidas</b>: <b>Calendario</b> (los meses), <b>Vertical</b> (Petróleo/Minería/Otras) y "
+    "<b>Rubro</b> (alquileres, honorarios, etc.). Ambas entradas se «cuelgan» de esas tablas, así al "
+    "elegir un mes, un vertical o un rubro se filtran las dos al mismo tiempo y la comparación es válida.")]
 
 E += [PageBreak()]
 
@@ -348,7 +348,8 @@ E += [tabla([
     ["Tarjetas KPI", "OPEX Total (real), Presupuesto Total, Desvío y % Ejecución, de un vistazo."],
     ["Columnas Real vs PA por Vertical", "Dos barras por vertical: una el real, otra el presupuesto."],
     ["Línea Real vs PA en el tiempo", "Dos líneas mes a mes: real vs. plan; se ve dónde se despega."],
-    ["Matriz por Vertical", "Tabla con OPEX, Presupuesto, Desvío y % Ejecución por cada vertical."],
+    ["Matriz por Rubro", "OPEX, Presupuesto, Desvío y % Ejecución por cada rubro (alquileres, etc.)."],
+    ["Matriz por Vertical", "Lo mismo, pero abierto por Petróleo / Minería / Otras."],
 ], [4.8*cm, 11.2*cm])]
 
 E += [callout("Cómo interactuar (vale para todo el tablero)",

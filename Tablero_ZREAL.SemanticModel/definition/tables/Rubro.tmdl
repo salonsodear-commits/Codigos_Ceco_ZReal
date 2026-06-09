@@ -1,0 +1,25 @@
+table Rubro
+	lineageTag: 2bd8bffd-af22-47f8-b8af-0ea6bf8f5559
+
+	column Rubro
+		dataType: string
+		lineageTag: 04f7088f-d4b0-480a-a7f3-dfeffb410c46
+		summarizeBy: none
+		sourceColumn: Rubro
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Rubro = calculated
+		mode: import
+		source =
+				FILTER (
+				    DISTINCT (
+				        UNION (
+				            SELECTCOLUMNS ( 'Base Real', "Rubro", 'Base Real'[Denominación de la cuenta] ),
+				            SELECTCOLUMNS ( PA, "Rubro", PA[Denominación de la cuenta] )
+				        )
+				    ),
+				    NOT ISBLANK ( [Rubro] )
+				)
+
+	annotation PBI_ResultType = Table

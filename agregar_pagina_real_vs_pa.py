@@ -5,7 +5,7 @@ import json, uuid, os
 
 REPORT = "Tablero_ZREAL.Report/report.json"
 
-ENTITY = {"b": "Base Real", "p": "PA", "v": "Vertical", "c": "Calendario"}
+ENTITY = {"b": "Base Real", "p": "PA", "v": "Vertical", "c": "Calendario", "r": "Rubro"}
 
 def gid():
     return uuid.uuid4().hex
@@ -77,14 +77,24 @@ vis.append(visual(760, 128, 504, 200, 7, "lineChart", ["c", "b", "p"],
                   [cl_mes, ml_opex, ml_ppto],
                   {"Category": [rcl_mes], "Y": [r_opex, r_ppto]}))
 
-# --- matriz: Vertical x (OPEX, Ppto, Desvío, %Ejec) ---
-mm_opex, _ = sel_measure("b", "OPEX Total")
-mm_ppto, _ = sel_measure("p", "Presupuesto Total")
-mm_desv, _ = sel_measure("b", "Desvío OPEX vs PA")
-mm_ejec, _ = sel_measure("b", "% Ejecución Ppto")
+# --- matriz por RUBRO: Real vs PA (abajo izquierda) ---
+mr_opex, _ = sel_measure("b", "OPEX Total")
+mr_ppto, _ = sel_measure("p", "Presupuesto Total")
+mr_desv, _ = sel_measure("b", "Desvío OPEX vs PA")
+mr_ejec, _ = sel_measure("b", "% Ejecución Ppto")
+rb_col, rb_ref = sel_column("r", "Rubro")
+vis.append(visual(16, 340, 620, 360, 8, "pivotTable", ["r", "b", "p"],
+                  [rb_col, mr_opex, mr_ppto, mr_desv, mr_ejec],
+                  {"Rows": [rb_ref], "Values": [r_opex, r_ppto, r_desv, r_ejec]}))
+
+# --- matriz por VERTICAL: Real vs PA (abajo derecha) ---
+mv2_opex, _ = sel_measure("b", "OPEX Total")
+mv2_ppto, _ = sel_measure("p", "Presupuesto Total")
+mv2_desv, _ = sel_measure("b", "Desvío OPEX vs PA")
+mv2_ejec, _ = sel_measure("b", "% Ejecución Ppto")
 mr_vert, rmr_vert = sel_column("v", "Vertical")
-vis.append(visual(16, 340, 1248, 360, 8, "pivotTable", ["v", "b", "p"],
-                  [mr_vert, mm_opex, mm_ppto, mm_desv, mm_ejec],
+vis.append(visual(648, 340, 616, 360, 9, "pivotTable", ["v", "b", "p"],
+                  [mr_vert, mv2_opex, mv2_ppto, mv2_desv, mv2_ejec],
                   {"Rows": [rmr_vert], "Values": [r_opex, r_ppto, r_desv, r_ejec]}))
 
 section = {

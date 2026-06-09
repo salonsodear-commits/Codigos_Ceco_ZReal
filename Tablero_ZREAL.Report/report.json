@@ -170,7 +170,7 @@
       "width": 1280.0
     },
     {
-      "name": "ReportSection920f06a81ca24fc78cb6705bb2e653c1",
+      "name": "ReportSection2fa8d16e57f4476e83b5563f3f501009",
       "displayName": "Real vs PA",
       "filters": "[]",
       "ordinal": 2,
@@ -181,7 +181,7 @@
           "z": 0.0,
           "width": 210.0,
           "height": 150.0,
-          "config": "{\"name\": \"2788a822c5f24ac0a38ec5ee561426d7\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 16, \"z\": 0, \"width\": 210, \"height\": 150, \"tabOrder\": 0}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"Vertical.Vertical\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"v\", \"Entity\": \"Vertical\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"v\"}}, \"Property\": \"Vertical\"}, \"Name\": \"Vertical.Vertical\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"3d2c696ebead43108b0d078705af51a1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 16, \"z\": 0, \"width\": 210, \"height\": 150, \"tabOrder\": 0}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"Vertical.Vertical\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"v\", \"Entity\": \"Vertical\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"v\"}}, \"Property\": \"Vertical\"}, \"Name\": \"Vertical.Vertical\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -190,7 +190,7 @@
           "z": 1.0,
           "width": 210.0,
           "height": 150.0,
-          "config": "{\"name\": \"fe94a48d9e9e4ee08aefe2e653d1d919\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 176, \"z\": 1, \"width\": 210, \"height\": 150, \"tabOrder\": 1}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"Calendario.Año\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"Calendario\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Año\"}, \"Name\": \"Calendario.Año\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"65ef03b6b8da41019ab5a328a8a41418\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 176, \"z\": 1, \"width\": 210, \"height\": 150, \"tabOrder\": 1}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"Calendario.Año\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"Calendario\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Año\"}, \"Name\": \"Calendario.Año\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -199,7 +199,7 @@
           "z": 2.0,
           "width": 250.0,
           "height": 100.0,
-          "config": "{\"name\": \"940a4bad3d1a44d9b5aab21eacec5ab1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 240, \"y\": 16, \"z\": 2, \"width\": 250, \"height\": 100, \"tabOrder\": 2}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"63993beffb2a40dbb8aca4ee85007b6b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 240, \"y\": 16, \"z\": 2, \"width\": 250, \"height\": 100, \"tabOrder\": 2}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.OPEX Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -208,7 +208,7 @@
           "z": 3.0,
           "width": 250.0,
           "height": 100.0,
-          "config": "{\"name\": \"3833386a95d047f4af194ea17744782b\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 500, \"y\": 16, \"z\": 3, \"width\": 250, \"height\": 100, \"tabOrder\": 3}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"PA.Presupuesto Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"08926188772d489da471c34c517583c6\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 500, \"y\": 16, \"z\": 3, \"width\": 250, \"height\": 100, \"tabOrder\": 3}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"PA.Presupuesto Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -217,7 +217,7 @@
           "z": 4.0,
           "width": 250.0,
           "height": 100.0,
-          "config": "{\"name\": \"71218955da3948138782c93407f554cc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 760, \"y\": 16, \"z\": 4, \"width\": 250, \"height\": 100, \"tabOrder\": 4}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.Desvío OPEX vs PA\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Desvío OPEX vs PA\"}, \"Name\": \"Base Real.Desvío OPEX vs PA\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"0e4bb23ed99c42128922ca18b0275f30\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 760, \"y\": 16, \"z\": 4, \"width\": 250, \"height\": 100, \"tabOrder\": 4}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.Desvío OPEX vs PA\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Desvío OPEX vs PA\"}, \"Name\": \"Base Real.Desvío OPEX vs PA\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -226,7 +226,7 @@
           "z": 5.0,
           "width": 244.0,
           "height": 100.0,
-          "config": "{\"name\": \"9f2181bccc0440ce9b396f85d41eda3c\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1020, \"y\": 16, \"z\": 5, \"width\": 244, \"height\": 100, \"tabOrder\": 5}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.% Ejecución Ppto\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Ejecución Ppto\"}, \"Name\": \"Base Real.% Ejecución Ppto\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"ec61350f517d4202aa8a5194d6a66814\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1020, \"y\": 16, \"z\": 5, \"width\": 244, \"height\": 100, \"tabOrder\": 5}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"Base Real.% Ejecución Ppto\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Ejecución Ppto\"}, \"Name\": \"Base Real.% Ejecución Ppto\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -235,7 +235,7 @@
           "z": 6.0,
           "width": 510.0,
           "height": 200.0,
-          "config": "{\"name\": \"50afb66c595f480388f3e3338b1367be\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 240, \"y\": 128, \"z\": 6, \"width\": 510, \"height\": 200, \"tabOrder\": 6}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Vertical.Vertical\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"v\", \"Entity\": \"Vertical\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"v\"}}, \"Property\": \"Vertical\"}, \"Name\": \"Vertical.Vertical\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"b2ff9bfaab754346b31153b27cd236ea\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 240, \"y\": 128, \"z\": 6, \"width\": 510, \"height\": 200, \"tabOrder\": 6}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Vertical.Vertical\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"v\", \"Entity\": \"Vertical\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"v\"}}, \"Property\": \"Vertical\"}, \"Name\": \"Vertical.Vertical\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
@@ -244,16 +244,25 @@
           "z": 7.0,
           "width": 504.0,
           "height": 200.0,
-          "config": "{\"name\": \"58c84be8c09540d3a347c055a483943d\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 760, \"y\": 128, \"z\": 7, \"width\": 504, \"height\": 200, \"tabOrder\": 7}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Calendario.Mes\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"Calendario\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Mes\"}, \"Name\": \"Calendario.Mes\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"96f70b8fe7144ca29bab821d87e29827\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 760, \"y\": 128, \"z\": 7, \"width\": 504, \"height\": 200, \"tabOrder\": 7}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"Calendario.Mes\"}], \"Y\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"Calendario\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"Mes\"}, \"Name\": \"Calendario.Mes\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         },
         {
           "x": 16.0,
           "y": 340.0,
           "z": 8.0,
-          "width": 1248.0,
+          "width": 620.0,
           "height": 360.0,
-          "config": "{\"name\": \"c6848abbefce4cdcb454fe31321ba274\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 340, \"z\": 8, \"width\": 1248, \"height\": 360, \"tabOrder\": 8}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"projections\": {\"Rows\": [{\"queryRef\": \"Vertical.Vertical\"}], \"Values\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}, {\"queryRef\": \"Base Real.Desvío OPEX vs PA\"}, {\"queryRef\": \"Base Real.% Ejecución Ppto\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"v\", \"Entity\": \"Vertical\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"v\"}}, \"Property\": \"Vertical\"}, \"Name\": \"Vertical.Vertical\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Desvío OPEX vs PA\"}, \"Name\": \"Base Real.Desvío OPEX vs PA\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Ejecución Ppto\"}, \"Name\": \"Base Real.% Ejecución Ppto\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "config": "{\"name\": \"cc37eb15053b4b59ae642cc0e7669c34\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 16, \"y\": 340, \"z\": 8, \"width\": 620, \"height\": 360, \"tabOrder\": 8}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"projections\": {\"Rows\": [{\"queryRef\": \"Rubro.Rubro\"}], \"Values\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}, {\"queryRef\": \"Base Real.Desvío OPEX vs PA\"}, {\"queryRef\": \"Base Real.% Ejecución Ppto\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"Rubro\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"Rubro\"}, \"Name\": \"Rubro.Rubro\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Desvío OPEX vs PA\"}, \"Name\": \"Base Real.Desvío OPEX vs PA\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Ejecución Ppto\"}, \"Name\": \"Base Real.% Ejecución Ppto\"}]}, \"drillFilterOtherVisuals\": true}}",
+          "filters": "[]"
+        },
+        {
+          "x": 648.0,
+          "y": 340.0,
+          "z": 9.0,
+          "width": 616.0,
+          "height": 360.0,
+          "config": "{\"name\": \"5d082fbf6b5a4eb7be8aa4ffe4ecbb86\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 648, \"y\": 340, \"z\": 9, \"width\": 616, \"height\": 360, \"tabOrder\": 9}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"projections\": {\"Rows\": [{\"queryRef\": \"Vertical.Vertical\"}], \"Values\": [{\"queryRef\": \"Base Real.OPEX Total\"}, {\"queryRef\": \"PA.Presupuesto Total\"}, {\"queryRef\": \"Base Real.Desvío OPEX vs PA\"}, {\"queryRef\": \"Base Real.% Ejecución Ppto\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"v\", \"Entity\": \"Vertical\", \"Type\": 0}, {\"Name\": \"b\", \"Entity\": \"Base Real\", \"Type\": 0}, {\"Name\": \"p\", \"Entity\": \"PA\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"v\"}}, \"Property\": \"Vertical\"}, \"Name\": \"Vertical.Vertical\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"OPEX Total\"}, \"Name\": \"Base Real.OPEX Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"Presupuesto Total\"}, \"Name\": \"PA.Presupuesto Total\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Desvío OPEX vs PA\"}, \"Name\": \"Base Real.Desvío OPEX vs PA\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"% Ejecución Ppto\"}, \"Name\": \"Base Real.% Ejecución Ppto\"}]}, \"drillFilterOtherVisuals\": true}}",
           "filters": "[]"
         }
       ],

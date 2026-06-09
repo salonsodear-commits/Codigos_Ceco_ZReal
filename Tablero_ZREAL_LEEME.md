@@ -17,7 +17,7 @@ un `.pbix` sólo puede escribirlo Power BI Desktop; este formato lo abrís y lo 
 
 ## Qué ya viene armado (modelo)
 
-El modelo tiene **dos entradas (inputs)** del mismo Excel y **dos dimensiones compartidas**:
+El modelo tiene **dos entradas (inputs)** del mismo Excel y **tres dimensiones compartidas**:
 
 **Tabla `Base Real`** (hoja «Base Real», el ZREAL) con columnas decodificadas en Power Query:
 `CECO`, `Letra`, `NegArea`, `ProdSector`, `ZonaCECO`, `Tipologia` (Directo/Indirecto/Locación
@@ -28,7 +28,7 @@ Ahora incluye también `Cta.contrapartida` y `Denominacion cuenta contrapartida`
 por fila) dejando `mes año` + `Presupuesto`, con la misma descomposición de CECO. `AUX VERTICAL`
 se usa como `VERTICAL`.
 
-**Dimensiones compartidas** `Calendario` (meses) y `Vertical`, relacionadas con las dos tablas para
+**Dimensiones compartidas** `Calendario` (meses), `Vertical` y `Rubro`, relacionadas con las dos tablas para
 que un mismo filtro cruce Real y Presupuesto.
 
 **Medidas DAX listas:**
@@ -79,7 +79,7 @@ El reporte ya trae **3 páginas** con visuales ligados al modelo:
 - Slicers `Vertical` y `Año` (tablas compartidas: filtran Real y PA a la vez)
 - Tarjetas: `OPEX Total`, `Presupuesto Total`, `Desvío OPEX vs PA`, `% Ejecución Ppto`
 - Columnas: Real vs PA por Vertical · Línea: Real vs PA por mes
-- Matriz: Vertical × (OPEX, Presupuesto, Desvío, % Ejecución)
+- Matriz por Rubro y matriz por Vertical: (OPEX, Presupuesto, Desvío, % Ejecución)
 
 > Si algún visual no renderizara, el modelo está intacto: borralo y rearmalo arrastrando el
 > campo, o seguí `guia_powerbi_excel.md`.
