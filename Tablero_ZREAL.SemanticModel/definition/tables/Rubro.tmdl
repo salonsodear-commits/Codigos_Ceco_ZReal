@@ -3,9 +3,10 @@ table Rubro
 
 	column Rubro
 		dataType: string
+		isNameInferred
 		lineageTag: 04f7088f-d4b0-480a-a7f3-dfeffb410c46
 		summarizeBy: none
-		sourceColumn: Rubro
+		sourceColumn: [Rubro]
 
 		annotation SummarizationSetBy = Automatic
 

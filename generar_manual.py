@@ -313,7 +313,7 @@ E += [PageBreak()]
 
 # ====================== 6. CÓMO LEER CADA PÁGINA ======================
 E += [H1("6. Cómo leer el tablero, página por página")]
-E += [P("El tablero tiene <b>tres páginas</b> (pestañas abajo a la izquierda). En todas, al hacer clic "
+E += [P("El tablero tiene <b>cuatro páginas</b> (pestañas abajo a la izquierda). En todas, al hacer clic "
         "en un elemento de un gráfico, el resto se <b>resalta/filtra</b> automáticamente.")]
 
 E += [H2("Página 1 — «Resumen OPEX»")]
@@ -351,6 +351,24 @@ E += [tabla([
     ["Matriz por Rubro", "OPEX, Presupuesto, Desvío y % Ejecución por cada rubro (alquileres, etc.)."],
     ["Matriz por Vertical", "Lo mismo, pero abierto por Petróleo / Minería / Otras."],
 ], [4.8*cm, 11.2*cm])]
+
+E += [H2("Página 4 — «Apertura por Proveedor» (nueva)")]
+E += [P("Permite ver el gasto <b>por proveedor</b> y abrirlo con el <b>máximo nivel de detalle</b>. "
+        "El «proveedor» sale de la columna <b>«Denominacion cuenta contrapartida»</b> (la contrapartida "
+        "del asiento).")]
+E += [tabla([
+    ["Visual", "Qué muestra / cómo leerlo"],
+    ["Filtros «Vertical» y «Tipo CECO»", "Acotan la vista a un segmento y/o a Directo/Indirecto."],
+    ["Tarjeta «OPEX Total»", "El gasto del filtro elegido."],
+    ["Barras «OPEX por Proveedor»", "Ranking de proveedores por monto (la barra más larga = más gasto)."],
+    ["Matriz «Apertura total»", "Tabla jerárquica que se <b>expande</b>: Vertical → Rubro → Negocio/Área "
+                                "→ Proveedor → Centro de costo."],
+], [4.8*cm, 11.2*cm])]
+E += [callout("«Apertura total»: cómo bajar al detalle",
+    "La matriz de esta página tiene varios niveles. Con el botón <b>«+»</b> (o el ícono de "
+    "<b>expandir todo</b>, las flechas dobles arriba del visual) podés abrir cada nivel hasta llegar al "
+    "<b>proveedor</b> y al <b>centro de costo</b>. Así, partiendo de un vertical, llegás al gasto "
+    "concreto, fila por fila. Es la vista para auditar «¿de dónde sale este número?».")]
 
 E += [callout("Cómo interactuar (vale para todo el tablero)",
     "1) Usá los <b>filtros (slicers)</b> para enfocar un Vertical o un Tipo. "

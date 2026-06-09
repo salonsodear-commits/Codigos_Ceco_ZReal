@@ -3,9 +3,10 @@ table Vertical
 
 	column Vertical
 		dataType: string
+		isNameInferred
 		lineageTag: 5f9dd6fb-0003-4dbd-aca6-a5b1a5f30003
 		summarizeBy: none
-		sourceColumn: Vertical
+		sourceColumn: [Vertical]
 
 		annotation SummarizationSetBy = Automatic
 

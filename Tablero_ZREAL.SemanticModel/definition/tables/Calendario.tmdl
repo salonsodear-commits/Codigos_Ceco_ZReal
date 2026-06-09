@@ -3,36 +3,40 @@ table Calendario
 
 	column Mes
 		dataType: dateTime
+		isNameInferred
 		formatString: General Date
 		lineageTag: d3726e2b-927a-4de2-946f-61448b42c8ed
 		summarizeBy: none
-		sourceColumn: Mes
+		sourceColumn: [Mes]
 
 		annotation SummarizationSetBy = Automatic
 
 	column Año
 		dataType: int64
+		isNameInferred
 		formatString: 0
 		lineageTag: 690b16ea-f49c-42a6-bd77-9dce00a3995e
 		summarizeBy: none
-		sourceColumn: Año
+		sourceColumn: [Año]
 
 		annotation SummarizationSetBy = Automatic
 
 	column NumMes
 		dataType: int64
+		isNameInferred
 		formatString: 0
 		lineageTag: 43ddf198-70ca-46f8-ae5c-2ad545927641
 		summarizeBy: none
-		sourceColumn: NumMes
+		sourceColumn: [NumMes]
 
 		annotation SummarizationSetBy = Automatic
 
 	column MesEtiqueta
 		dataType: string
+		isNameInferred
 		lineageTag: 82d63345-0001-43cf-b36a-f79521620001
 		summarizeBy: none
-		sourceColumn: MesEtiqueta
+		sourceColumn: [MesEtiqueta]
 		sortByColumn: Mes
 
 		annotation SummarizationSetBy = Automatic

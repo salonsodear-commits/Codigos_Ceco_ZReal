@@ -60,7 +60,7 @@ SUMX ( VALUES ( Ventas[UN] ), [Gasto Indirecto Asignado] )   // debe = OPEX Indi
 ```
 
 ## Visualizaciones incluidas
-El reporte ya trae **3 páginas** con visuales ligados al modelo:
+El reporte ya trae **4 páginas** con visuales ligados al modelo:
 
 **Página 1 — `Resumen OPEX`**
 - Tarjetas: `OPEX Total`, `% Directo`, `% Indirecto`
@@ -80,6 +80,11 @@ El reporte ya trae **3 páginas** con visuales ligados al modelo:
 - Tarjetas: `OPEX Total`, `Presupuesto Total`, `Desvío OPEX vs PA`, `% Ejecución Ppto`
 - Columnas: Real vs PA por Vertical · Línea: Real vs PA por mes
 - Matriz por Rubro y matriz por Vertical: (OPEX, Presupuesto, Desvío, % Ejecución)
+
+**Página 4 — `Apertura por Proveedor`** (nueva)
+- Slicers `VERTICAL` y `TIPO CECO` · Tarjeta `OPEX Total`
+- Barras: OPEX por Proveedor (`Denominacion cuenta contrapartida`)
+- Matriz de apertura total: Vertical → Rubro → Negocio/Área → Proveedor → Centro de coste
 
 > Si algún visual no renderizara, el modelo está intacto: borralo y rearmalo arrastrando el
 > campo, o seguí `guia_powerbi_excel.md`.
